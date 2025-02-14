@@ -10,10 +10,6 @@ const u1 = {
 
 const userList = [
   {
-    name: "ALex 11",
-    age: 1000,
-  },
-  {
     name: "ALex 2",
     age: 1000,
   },
