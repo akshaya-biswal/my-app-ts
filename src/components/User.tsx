@@ -1,11 +1,16 @@
-type UserProps = { user: { name: string; age: number }; index: number };
+import { useState } from "react";
 
-const User = (props: UserProps) => {
+const User = () => {
+  const [name, setName] = useState<string>("");
+  const [age, setAge] = useState<number>(0);
+
   return (
     <>
-      <h2>User - {props.index}</h2>
-      <p>{props.user.name}</p>
-      <p>{props.user.age}</p>
+      <h1>
+        User - {name} {age}
+      </h1>
+      <input value={name} onChange={(e) => setName(e.target.value)} />
+      <input value={age} onChange={(e) => setAge(Number(e.target.value))} />
     </>
   );
 };
