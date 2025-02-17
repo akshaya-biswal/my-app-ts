@@ -5,7 +5,7 @@ const Message = () => {
 
   return (
     <>
-      <h1>Message - {message}</h1>
+      <h1>User Name - {message}</h1>
       <button onClick={() => setMessage("Bye")}>Update Message</button>
     </>
   );
