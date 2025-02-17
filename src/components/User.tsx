@@ -1,16 +1,21 @@
 import { useState } from "react";
 
 const User = () => {
-  const [name, setName] = useState<string>("");
-  const [age, setAge] = useState<number>(0);
+  const [data, setData] = useState({ name: "", age: 0 });
 
   return (
     <>
       <h1>
-        User - {name} {age}
+        User - {data.name} {data.age}
       </h1>
-      <input value={name} onChange={(e) => setName(e.target.value)} />
-      <input value={age} onChange={(e) => setAge(Number(e.target.value))} />
+      <input
+        value={data.name}
+        onChange={(e) => setData({ ...data, name: e.target.value })}
+      />
+      <input
+        value={Number(data.age)}
+        onChange={(e) => setData({ ...data, age: Number(e.target.value) })}
+      />
     </>
   );
 };
