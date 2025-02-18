@@ -1,8 +1,19 @@
-import { useState } from "react";
+import React from "react";
 
-const User = () => {
-  const [data, setData] = useState({ name: "", age: 0 });
+type UserProps = {
+  data: {
+    name: string;
+    age: number;
+  };
+  setData: React.Dispatch<
+    React.SetStateAction<{
+      name: string;
+      age: number;
+    }>
+  >;
+};
 
+const User = ({ data, setData }: UserProps) => {
   return (
     <>
       <h1>
