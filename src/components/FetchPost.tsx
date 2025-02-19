@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 type PostType = {
   userId: number;
@@ -39,6 +39,16 @@ const FetchPost = () => {
     }
   };
 
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      fetchPost();
+    }, 2000);
+
+    return () => clearTimeout(timeoutId);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [postId]);
+
   return (
     <>
       <h2>Fetch Post -{postId}</h2>
@@ -46,14 +56,18 @@ const FetchPost = () => {
         type="number"
         placeholder="Enter a post ID"
         value={postId}
-        onChange={(e) => setPostId(e.target.value)}
+        onChange={(e) => {
+          setPostId(e.target.value);
+          setPost(null);
+        }}
       />
-      <button onClick={fetchPost}>Fetch Post</button>
+      {/* <button onClick={fetchPost}>Fetch Post</button> */}
       {loading && <p>Loading</p>}
       {error && <p>{error}</p>}
-      {post && (
+      {post && postId && (
         <div>
           <p>{post.title}</p>
+          <p>{post.body}</p>
         </div>
       )}
     </>
