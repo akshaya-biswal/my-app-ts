@@ -1,13 +1,15 @@
 import "./App.css";
-import FetchPost from "./components/FetchPost";
-// import Todo from "./components/Todo";
+import { ThemeProvider } from "./components/ThemeContext";
+import ThemeSwitcher from "./components/ThemeSwitcher";
 
 const App = () => {
   return (
-    <div className="App">
-      {/* <Todo /> */}
-      <FetchPost />
-    </div>
+    <ThemeProvider>
+      <div className="App">
+        <h1>App</h1>
+        <ThemeSwitcher />
+      </div>
+    </ThemeProvider>
   );
 };
 
