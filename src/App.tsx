@@ -1,4 +1,5 @@
 import "./App.css";
+import Parent from "./components/Parent";
 import { ThemeProvider } from "./components/ThemeContext";
 import ThemeSwitcher from "./components/ThemeSwitcher";
 
@@ -8,6 +9,7 @@ const App = () => {
       <div className="App">
         <h1>App</h1>
         <ThemeSwitcher />
+        <Parent />
       </div>
     </ThemeProvider>
   );
