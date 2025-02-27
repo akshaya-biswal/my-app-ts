@@ -25,6 +25,7 @@ const PostDetails = () => {
     retry: false,
     refetchOnWindowFocus: false,
     // refetchOnMount: false,
+    enabled: !!id && !isNaN(Number(id)),
   });
 
   if (isLoading) {
