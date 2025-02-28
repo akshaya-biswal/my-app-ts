@@ -1,9 +1,10 @@
 import "./App.css";
+import ReactHookForm from "./components/ReactHookForm";
 
 const App = () => {
   return (
     <div className="App">
-      <h1>Hello</h1>
+      <ReactHookForm />
     </div>
   );
 };
